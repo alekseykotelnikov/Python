@@ -1,7 +1,6 @@
 # Указав номер четверти прямоугольной системы координат, 
 # показать допустимые значения координат для точек этой четверти
 import os
-from unittest import result
 os.system("cls")
 
 from random import randint
