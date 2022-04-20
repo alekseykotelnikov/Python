@@ -1,5 +1,6 @@
 # Сформировать список из  N членов последовательности.
 # Для N = 5: 1, -3, 9, -27, 81 и т.д.
+
 import os
 os.system('cls')
 
@@ -12,18 +13,10 @@ def try_parse_int():
         except ValueError:
             print('Wrong number. Try again')
 
-def get_list(n):
-    from random import randint
-    mylist = []
-    for i in range(n):
-        mylist.append(randint(-10, 10))
-    return mylist
 
+
+def get_degree(n):
+    return [((-3)**i) for i in range(n)]
 
 n = try_parse_int()
-the_list = get_list(n)
-
-print('Сформированный список будет следующим: {}'.format(the_list))
-
-for i in the_list:
-    print(i, end=' ')
+print(get_degree(n))
