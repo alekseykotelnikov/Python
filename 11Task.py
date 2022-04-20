@@ -16,6 +16,7 @@ def try_parse_int():
 
 
 def get_degree(n):
+    print('Список из {} членов последовательности, будет: '.format(n))
     return [((-3)**i) for i in range(n)]
 
 n = try_parse_int()
