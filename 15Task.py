@@ -15,14 +15,15 @@ def try_parse_int():
             print('Wrong number. Try again')
 
 def factorial(n):
-    list = []
-    for i in range(1, n + 1):
-        if i == 1:
-            list.append(i)
-        if i != 1:
-            list.append(i * (i -1))
+    list = [1]
+    for i in range(2, n + 1):
+        list.append(i * list[i - 2])
     return list
 
 n = try_parse_int()
 list = factorial(n)
 print(list)
+
+
+
+
