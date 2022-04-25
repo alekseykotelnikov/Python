@@ -24,6 +24,7 @@ def get_position():
     for line in data:
         list2.append(int(line))
     return list2
+    data.close()
 
 n = try_parse_int()
 
@@ -40,7 +41,6 @@ def get_multi(list, list2):
 
 list2 = get_position()
 list = get_list(n)
-data.close()
 multi = get_multi(list, list2)
 print(f'We have next list: {list}')
 print(f'We have next position: {list2}')
