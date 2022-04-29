@@ -6,7 +6,7 @@ import itertools
 
 
 first_file = '33_Polynomial.txt'
-second_file = '34_second_poly.txt'
+second_file = '33_Polynomial2.txt'
 file_sum = '34_Sum_polynomial.txt'
 
 # Получение данных из файла, тип строка
