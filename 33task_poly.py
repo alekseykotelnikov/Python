@@ -32,5 +32,5 @@ print(list)
 
 with open('33_Polynomial.txt', 'w') as data:
     data.write(list)
-with open('33_Polynomial.txt', 'w') as data:
+with open('33_Polynomial2.txt', 'w') as data:
     data.write(list)
