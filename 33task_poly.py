@@ -30,5 +30,7 @@ def get_polynomial(k, ratio_list): # далее идет загугливани�
 list = get_polynomial(k, ratio_list)
 print(list)
 
-with open('33_Polynomial.txt', 'a') as data:
+with open('33_Polynomial.txt', 'w') as data:
+    data.write(list)
+with open('33_Polynomial.txt', 'w') as data:
     data.write(list)
