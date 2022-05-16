@@ -16,7 +16,7 @@ greeting = ('Чтобы начать голодные игры, необходи
     \nВ какой режим Вы хотите играть? \
         \nЕсли с Игроком2: введите 1, если с Ботом введите 2 \
             \nесли хотите почувствовать себя ничтожеством - введите 3 (BigBoss)')
-n = 21
+n = 25
 m = 3          
 
 messages = ['Ваша очередь', 'возьмите конфеты', 
@@ -36,10 +36,13 @@ def play_game(n, m, players, messages, number_player):
         number_player +=1
     return players[not number_player%2]
 
-def play_game_bot(n, m, players, messages, number_player):
+def play_game_bot_hard(n, m, players, messages, number_player):
     while n > 0:
         if number_player%2 != 0:
-            move = n % m + 1
+            if n > m:
+                move = n % (m + 1)
+            else:
+                move = n
             print(f'Я беру {move} конфет')
         else:
             print(f'{players[number_player%2]}, {random.choice(messages)}')
@@ -53,13 +56,13 @@ def play_game_bot(n, m, players, messages, number_player):
         number_player +=1
     return players[not number_player%2]
 
-def play_game_bot_hard(n, m, players, messages, number_player):
+def play_game_bot(n, m, players, messages, number_player):
     while n > 0:
         if number_player%2 != 0:
             if n > m:
-                move = n - ((n // (m+1)) * (m+1))
+                move = random.randint(1, m)
             else:
-                move = n
+                move = 1
             print(f'Я беру {move} конфет')
         else:
             print(f'{players[number_player%2]}, {random.choice(messages)}')
