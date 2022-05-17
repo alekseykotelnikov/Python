@@ -22,3 +22,6 @@ def get_dictionary(n):
 
 n = try_parse_int()
 print(get_dictionary(n))
+
+
+print({a: 3*a + 1 for a in range(1, int(input('Введите N: ') ) + 1)})
