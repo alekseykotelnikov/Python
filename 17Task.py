@@ -1,47 +1,34 @@
 # Задать список из N элементов, заполненных числами из [-N, N]. 
 # Найти произведение элементов на указанных позициях. 
 # Позиции хранятся в файле file.txt в одной строке одно число
-from random import randint
+
+from functools import reduce
 import os
-os.system('cls')
+import random
+os.system("cls")
 
-def try_parse_int():
-    while True:
-        try:
-            console_input = int(input('Enter the N number: '))
-            if 3 <= console_input <= 8:
-                return int(console_input)
-        except ValueError:
-            print('Wrong number. Try again')
+n = random.randint(5, 10)
 
-def get_list(n):
-    return [randint(-n, n) for i in range(n)]
+list = [i for i in range(-n, n+1)]
 
-def get_position():
-    path = '17Task.txt'
-    data = open(path, 'r')
-    list2 = []
-    for line in data:
-        list2.append(int(line))
-    return list2
-    data.close()
+print('Задан список: ', list, '\n')
 
-n = try_parse_int()
+with open('17Task.txt', 'w') as data: 
+    for i in range(int(n/2)):
+        data.write(f'{random.randint(0, n*2)}\n')
 
-with open('17Task.txt', 'a') as data:
-    data.writelines(f'{randint(1, n) - 1}\n') # -1 так как это индекс, должен быть меньше 
-    data.writelines(f'{randint(1, n) - 1}\n') # чем количество чисел в первом списке
-    data.writelines(f'{randint(1, n) - 1}')
 
-def get_multi(list, list2):
-    result = 1
-    for i in list2:
-        result *= list[i]
-    return result
+def read2list(file):    
+    with open(file, 'r') as file:
+        position_index = [int(line.strip()) for line in file.readlines()]
+        position_index.sort()
+        print('Выбраны позиции с индексами: \t', *position_index)
+        return position_index
 
-list2 = get_position()
-list = get_list(n)
-multi = get_multi(list, list2)
-print(f'We have next list: {list}')
-print(f'We have next position: {list2}')
-print(f'Multiplication is: {multi}')
+
+position_index = read2list('17Task.txt')
+position_element = [list[i] for i in position_index]
+mult = reduce((lambda x, y: x*y), position_element)
+
+print('Элементы на указанных позициях:\t', *position_element,
+      '\nИх произведение равно : \t', mult, '\n')
