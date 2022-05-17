@@ -27,8 +27,8 @@ def play_game(n, m, players, messages, number_player):
     while n > 0:
         print(f'{players[number_player%2]}, {random.choice(messages)}')
         move = int(input())
-        while move > n or move > m:
-            print(f'Это слишком много, можно взять не более {m} конфет, у нас всего {n} конфет')
+        while move > n or move > m or move <= 0:
+            print(f'Можно взять не более {m} конфет, у нас всего {n} конфет, 0 брать нельзя')
             move = int(input())
         n = n - move
         if n > 0: print(f'Осталось {n} конфет')
@@ -47,8 +47,8 @@ def play_game_bot_hard(n, m, players, messages, number_player):
         else:
             print(f'{players[number_player%2]}, {random.choice(messages)}')
             move = int(input())
-            while move > n or move > m:
-                print(f'Это слишком много, можно взять не более {m} конфет, у нас всего {n} конфет')
+            while move > n or move > m or move <= 0:
+                print(f'Можно взять не более {m} конфет, у нас всего {n} конфет, 0 брать нельзя')
                 move = int(input())
         n = n - move
         if n > 0: print(f'Осталось {n} конфет')
@@ -67,8 +67,8 @@ def play_game_bot(n, m, players, messages, number_player):
         else:
             print(f'{players[number_player%2]}, {random.choice(messages)}')
             move = int(input())
-            while move > n or move > m:
-                print(f'Это слишком много, можно взять не более {m} конфет, у нас всего {n} конфет')
+            while move > n or move > m or move <= 0:
+                print(f'Можно взять не более {m} конфет, у нас всего {n} конфет, 0 брать нельзя')
                 move = int(input())
         n = n - move
         if n > 0: print(f'Осталось {n} конфет')
