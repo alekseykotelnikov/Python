@@ -51,5 +51,11 @@ print(f'Сжатый текст будет вот такого вида: \n{strc
 with open('42_code2.txt', 'w') as data:
     data.write(strc)
 
-total = decode_file(strc)
+with open('42_code2.txt', 'r') as data:
+    my_text = data.read()
+
+total = decode_file(my_text)
 print(f'Восстановленный текст будет следующего вида: \n{total}') # проверка второй магии
+
+with open('42_decode.txt', 'w') as data:
+    data.write(total)
