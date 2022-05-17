@@ -19,3 +19,4 @@ result = sum(map(int, n))
 print(n)
 print(result)
 
+print(sum(map(int, list(str(float(input('Введите число с плавающей точкой: '))).replace('.', '')))))
