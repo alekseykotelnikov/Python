@@ -12,12 +12,11 @@ def try_parse_int():
                 return int(console_input)
         except ValueError:
             print('Wrong number. Try again')
-
-
-
 def get_degree(n):
     print('Список из {} членов последовательности, будет: '.format(n))
     return [((-3)**i) for i in range(n)]
+
+print(list((-3)**i for i in range(int(input()))))
 
 n = try_parse_int()
 print(get_degree(n))
